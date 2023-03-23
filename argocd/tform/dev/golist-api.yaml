@@ -2,16 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
-  name: golist-db
+    argocd.argoproj.io/sync-wave: "2"
+  name: formengine-tform-dev-golist-api
   namespace: argocd
 spec:
   source:
-    path: apps/golist-db
-    repoURL: 'https://github.com/christianh814/golist'
+    path: apps/golist-api
+    repoURL: 'https://github.com/merikan/golist'
     targetRevision: main
   destination:
-    namespace: golist
+    namespace: 'golist-dev'
     server: 'https://kubernetes.default.svc'
   project: default
   syncPolicy:

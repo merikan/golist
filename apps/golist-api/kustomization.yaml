@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: golist
+namespace: golist-dev
 
 bases:
 - github.com/christianh814/golist-api/deploy
@@ -17,4 +17,4 @@ patchesJson6902:
     patch: |-
       - op: replace
         path: /data/config.json
-        value: '{"connection_string":"golist:golist@tcp(golist-db-mariadb:3306)/golist","port":8080}'
+        value: '{"connection_string":"golist:golist@tcp(dev-golist-db-mariadb:3306)/golist","port":8080}'
